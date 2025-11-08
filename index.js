@@ -11,7 +11,7 @@ if (!SQS_QUEUE_URL) throw Error('[hermes] missing HERMES_SQS_QUEUE_URL');
 const HEALTH_CHECK_PORT = parseInt(process.env.HERMES_HEALTH_CHECK_PORT || '8080');
 
 const sqsClient = new SQSClient({
-    useQueueUrlAsEndpoint: true    
+    useQueueUrlAsEndpoint: true
 });
 const udpServer = dgram.createSocket('udp4');
 
