@@ -1,0 +1,28 @@
+{
+  "name": "hermes",
+  "private": "true",
+  "version": "0.0.0",
+  "description": "Docker Container that proxies UDP datagram messages to AWS SQS",
+  "homepage": "https://github.com/gocarta/hermes#readme",
+  "bugs": {
+    "url": "https://github.com/gocarta/hermes/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gocarta/hermes.git"
+  },
+  "license": "CC0-1.0",
+  "author": "Daniel J. Dufour",
+  "main": "index.js",
+  "scripts": {
+    "build": "docker build -t hermes .",
+    "sqs": "docker run -p 9324:9324 -p 9325:9325 softwaremill/elasticmq-native",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sqs": "^3.927.0"
+  },
+  "devDependencies": {
+    "flug": "^2.8.2"
+  }
+}
