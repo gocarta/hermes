@@ -1,6 +1,6 @@
 const dgram = require('node:dgram');
+const http = require('node:http');
 const { SQSClient, SendMessageCommand } = require("@aws-sdk/client-sqs");
-const http = require('http');
 
 const DEBUG = ["TRUE", "True", "T", "true", "t"].includes(process.env.HERMES_DEBUG);
 const UDP_PORT = parseInt(process.env.HERMES_UDP_PORT || '5000');
